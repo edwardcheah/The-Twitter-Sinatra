@@ -14,6 +14,20 @@ $(document).ready(function() {
     })
   })
 
+  $(document).on('submit', '.delete-button', function(event) {
+    event.preventDefault()
+    var $target = $(event.target)
+    $.ajax({
+      url: $target.attr('action'),
+      type: 'POST',
+      data: $target.serialize()
+    }).done(function(response) {
+      var parsedResponse = JSON.parse(response)
+      $target.closest('.col-lg-12').html(parsedResponse.index)
+      $('#sidebar-wrapper').html(parsedResponse.mini)
+    })
+  })
+
   $(document).on('submit', '.like-form', function(event) {
     event.preventDefault()
     var $target = $(event.target)

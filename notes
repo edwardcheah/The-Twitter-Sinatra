@@ -64,12 +64,11 @@ protect routes with :auth as appropriate [done]
 bugs/issues
 - ajax new tweet formatting (do last, it keeps changing) [done]
 - can't follow somebody more than once [done]
-- handle error: bad tweet
+- handle errors for bad tweets
 - username uniqueness [done]
 - tweet ajax updates mini profile tweet count only once [fixed]
 - tweet index ordering is jacked up [fixed]
-- handle tweet too long handle
-- ajax tweet deletion
+- ajax tweet deletion [done]
 - clear form upon submission
 
 text dump

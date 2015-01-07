@@ -1,6 +1,6 @@
 get '/tweets' do
   @tweets = Tweet.all.sort_by { |t| t.elapsed_seconds }
-  erb :'tweet/index'
+  erb :'tweet/index', locals: {tweets: @tweets}
 end
 
 post '/tweets', auth: :user do
@@ -19,7 +19,15 @@ end
 delete '/tweet/:id', auth: :user do |id|
   @tweet = Tweet.find(id)
   @tweet.destroy
-  redirect '/tweets'
+  @tweets = Tweet.all.sort_by { |t| t.elapsed_seconds }
+
+  if request.xhr?
+    index = erb :'tweet/index', locals: {tweets: @tweets}, layout: false
+    mini = erb :'user/mini_profile', locals: {user: current_user}, layout: false
+    {mini: mini, index: index}.to_json
+  else
+    redirect '/tweets'
+  end
 end
 
 post '/tweet/:id/like', auth: :user do |id|
