@@ -1,5 +1,7 @@
+<%= erb :'/tweet/_tweet_form' %>
+<%= display_error %>
 <ul id='tweet-list'>
-    <% @tweets.each do |tweet| %>
-        <%= erb :'tweet/single', locals: {tweet: tweet} %>
-    <% end %>
+  <% @tweets.each do |tweet| %>
+      <%= erb :'tweet/single', locals: {tweet: tweet} %>
+  <% end %>
 </ul>

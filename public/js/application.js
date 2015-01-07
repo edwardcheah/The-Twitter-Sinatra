@@ -35,6 +35,7 @@ $(document).ready(function() {
       var response = JSON.parse(response)
       $target.closest('.col-lg-12').html(response.full)
       $('#sidebar-wrapper').html(response.mini)
+      console.log(response.error)
     })
   })
 });

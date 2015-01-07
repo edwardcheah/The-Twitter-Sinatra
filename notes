@@ -59,12 +59,12 @@ users can like tweets
   ajax updates a tweet's like count [done, finally]
   limit a user's likes to one [done]
 
-protect routes with :auth as appropriate
+protect routes with :auth as appropriate [done]
 
 bugs/issues
-- ajax new tweet formatting (do last, it keeps changing)
-- can't follow somebody more than once
-- take error messages out of nav
+- ajax new tweet formatting (do last, it keeps changing) [done]
+- can't follow somebody more than once [done]
+- handle error: bad tweet
 - username uniqueness
 - format times on ajax response
 - tweet ajax updates mini profile tweet count only once

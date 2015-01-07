@@ -5,11 +5,13 @@ end
 
 post '/tweets', auth: :user do
   @tweet = Tweet.create(params[:tweet])
+
   if request.xhr?
-    erb :'tweet/single', locals: {tweet: @tweet}, layout: false
+    erb :'tweet/single', locals: {tweet: @tweet, error: @error}, layout: false
   else
     redirect '/tweets'
   end
+
 end
 
 delete '/tweet/:id', auth: :user do |id|

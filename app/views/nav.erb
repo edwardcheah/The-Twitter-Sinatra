@@ -14,7 +14,6 @@
         <% if logged_in? %>
         <li><a href="/user/<%= current_user.id %>">Profile</a></li>
         <% end %>
-        <li><p><%= display_error %><p></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if !logged_in? %>
