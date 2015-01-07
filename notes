@@ -21,18 +21,18 @@ user can create tweets [DONE]
   form on top of feed [done]
   ajax shows tweet on top of feed [done]
 
-feed (home page) shows all tweets by default
+feed (home page) shows all tweets by default [DONE]
   time elapsed in minutes [done]
   content limited to 140 chars [done]
   author user_name [done]
   author profile picture [done]
-  likes
+  likes [done]
 
-user profile shows a users tweets and stats
+user profile shows a users tweets and stats [DONE]
   user name [done]
   profile picture [done]
   tweet count [done]
-  follows, followers lists
+  follows, followers lists [done]
   user can delete own tweets [done]
   all tweets by that user [done]
   all user names link to their profile page [done]
@@ -43,15 +43,15 @@ user can edit own page [DONE]
   city [done]
   join date [done]
 
-home page has mini profile next to feed
-  homepage tweet ajax call updates mini profile stats too [bug]
+home page has mini profile next to feed [DONE]
+  homepage tweet ajax call updates mini profile stats too
 
-users can follow each other
+users can follow each other [DONE]
   must follow from that user's page [done]
-  ajax call update stats
+  ajax call update stats [done]
   toggle follow/unfollow button [done]
 
-users can like tweets
+users can like tweets [DONE]
   format tweets better [ok]
   put likes in the db [done]
   add a like button [done]
@@ -64,12 +64,17 @@ protect routes with :auth as appropriate [done]
 bugs/issues
 - ajax new tweet formatting (do last, it keeps changing) [done]
 - can't follow somebody more than once [done]
-- handle errors for bad tweets
+- handle errors for bad tweets [poorly, but better than nothing]
 - username uniqueness [done]
 - tweet ajax updates mini profile tweet count only once [fixed]
 - tweet index ordering is jacked up [fixed]
 - ajax tweet deletion [done]
 - clear form upon submission [done]
+
+refactor for dryness
+
+someday/maybe
+- better error handling
 
 text dump
 be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed

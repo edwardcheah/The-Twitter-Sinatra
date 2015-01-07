@@ -16,8 +16,8 @@
       <input type='hidden' name='like[tweet_id]' value='<%= tweet.id %>'>
       <input class='like-button' type='submit' value='<%= current_user.likes_this_tweet(tweet) ? "dislike" : "like" %>'></input>
     </form>
-  <% end %>
-  <%= tweet.display_elapsed_time %></span><br>
+  <% end %></span><br>
+  <%= tweet.display_elapsed_time %><br>
   <%= tweet.content %><br>
   <p class='like-count'><%= tweet.likes.count %> Likes</p>
 </div>

@@ -15,6 +15,10 @@ $(document).ready(function() {
     $('#tweet-form')[0].reset()
   })
 
+  $(document).ajaxError(function(error) {
+    window.alert('Invalid tweet - between 0 and 140 chars')
+  })
+
   $(document).on('submit', '.delete-button', function(event) {
     event.preventDefault()
     var $target = $(event.target)
@@ -51,6 +55,7 @@ $(document).ready(function() {
     }).done(function(response) {
       var parsedResponse = JSON.parse(response)
       $target.closest('.col-lg-12').html(parsedResponse.full)
+      console.log(parsedResponse.full)
       $('#sidebar-wrapper').html(parsedResponse.mini)
     })
   })
