@@ -1,5 +1,5 @@
 get '/tweets' do
-  @tweets = Tweet.all.sort_by { |t| t.elapsed_time }
+  @tweets = Tweet.all.sort_by { |t| t.elapsed_seconds }
   erb :'tweet/index'
 end
 

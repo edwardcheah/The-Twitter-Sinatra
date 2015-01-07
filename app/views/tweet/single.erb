@@ -17,7 +17,7 @@
       <input class='like-button' type='submit' value='<%= current_user.likes_this_tweet(tweet) ? "dislike" : "like" %>'></input>
     </form>
   <% end %>
-  <%= tweet.elapsed_time %></span><br>
+  <%= tweet.display_elapsed_time %></span><br>
   <%= tweet.content %><br>
   <p class='like-count'><%= tweet.likes.count %> Likes</p>
 </div>
