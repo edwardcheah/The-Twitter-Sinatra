@@ -62,6 +62,7 @@ users can like tweets
 protect routes with :auth as appropriate
 
 bugs/issues
+- ajax new tweet formatting (do last, it keeps changing)
 - can't follow somebody more than once
 - take error messages out of nav
 - username uniqueness
@@ -69,7 +70,7 @@ bugs/issues
 - tweet ajax updates mini profile tweet count only once
 - tweet index ordering is jacked up
 - handle tweet too long handle
-- ajax tweet feed formatting (do last, it keeps changing)
+- ajax tweet deletion
 
 text dump
 be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed

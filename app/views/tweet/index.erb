@@ -1,7 +1,5 @@
 <ul id='tweet-list'>
     <% @tweets.each do |tweet| %>
-        <li id='single-tweet'>
         <%= erb :'tweet/single', locals: {tweet: tweet} %>
-        </li>
     <% end %>
 </ul>

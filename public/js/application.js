@@ -8,12 +8,7 @@ $(document).ready(function() {
       type: 'POST',
       data: $target.serialize()
     }).done(function(response) {
-      var $response = JSON.parse(response)
-      console.log($response.tweet.content)
-      if ($response.tweet.id) {
-        $('#tweet-list').prepend('<li id=\'single-tweet\'><div class=\'single-tweet\'><a href=\'/user/' + $response.author.id + '\'><img class=\'profile-pic-thumb\' src=' + $response.author.pic_url + '> @' + $response.author.user_name + '</a><br>' + $response.tweet.elapsed_time + '<br>' + $response.tweet.content+'<br></li></div>');
-        $('#tweet-count').replaceWith($response.tweet_count)
-      }
+      $('#tweet-list').prepend(response)
     })
   })
 

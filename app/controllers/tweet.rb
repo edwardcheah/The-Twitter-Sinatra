@@ -6,7 +6,7 @@ end
 post '/tweets' do
   @tweet = Tweet.create(params[:tweet])
   if request.xhr?
-    {author: @tweet.author, tweet: {id: @tweet.id, elapsed_time: @tweet.elapsed_time, content: @tweet.content}, tweet_count: @tweet.author.tweets.count}.to_json
+    erb :'tweet/single', locals: {tweet: @tweet}, layout: false
   else
     redirect '/tweets'
   end
