@@ -1,7 +1,26 @@
-/*body {font-family: Josefin Slab }*/
+/* notes
+space gray #a5adb0
+dark turquoise #00475A
+sky blue #0DABE7
+light green #00a669
+dirty yellow #FFCC00
+*/
+
+* {
+  color: #0DABE7;
+}
+
+a:hover {
+  color: #0DABE7;
+}
+
+body {
+  font-family: Josefin Slab;
+  background: url("../img/dark_wood.png");
+}
 
 .container {
-  /*background: url("../img/gray_sand.png");*/
+  background: url("../img/pw_maze_black.png");
   margin: 20px auto;
   width: 60%;
   padding: 0px 20px 20px 20px;
