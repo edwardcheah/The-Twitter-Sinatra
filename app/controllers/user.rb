@@ -4,6 +4,7 @@ get '/user/:id' do |id|
     redirect '/login'
   end
   @user = User.find(id)
+  @follow_action = @user.has_followee(current_user) ? 'Unfollow' : 'Follow'
   erb :'user/profile'
 end
 
@@ -28,6 +29,15 @@ get '/user/:id/followers' do |id|
 end
 
 post '/user/:id/follow' do |id|
-  Following.create(from_user_id: "#{current_user.id}", to_user_id: id)
+  params[:follow] = {
+    from_user_id: "#{current_user.id}",
+    to_user_id: id
+  }
+  existing_follow = Following.find_by(params[:follow])
+  if existing_follow
+    existing_follow.destroy
+  else
+    Following.create(params[:follow])
+  end
   redirect "/user/#{id}"
 end

@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   # a user has many followers (many other users follow them)
   has_many :followed, foreign_key: :to_user_id, class_name: "Following"
   has_many :followees, source: :from_user, through: :followed
+
+  def has_followee(other_user)
+    self.followees.where(id: other_user.id).count > 0
+  end
+
+  def has_follower(other_user)
+    self.followers.where(id: other_user.id).count > 0
+  end
 end

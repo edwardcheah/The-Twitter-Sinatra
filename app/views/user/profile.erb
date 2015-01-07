@@ -2,7 +2,7 @@ Username: @<%= @user.user_name %><br>
 <!-- follow button -->
 <% if @user.id != current_user.id %>
   <form action='/user/<%= @user.id %>/follow' method='POST'>
-    <input type='submit' value='follow'>
+    <input type='submit' value='<%= @follow_action %>'>
   </form><br>
 <% end %>
 <% if @user.id == current_user.id %>
