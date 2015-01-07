@@ -3,10 +3,6 @@ get '/tweets' do
   erb :'tweet/index'
 end
 
-get '/tweets/new' do
-  # erb :'tweets/new'
-end
-
 post '/tweets' do
   @tweet = Tweet.create(params[:tweet])
   if request.xhr?
@@ -16,13 +12,7 @@ post '/tweets' do
   end
 end
 
-get '/tweets/:id' do |id|
-  # display a specific tweet
-  # @tweet = Tweet.find id
-  # erb :'tweets/single'
-end
-
-delete '/tweets/:id' do |id|
+delete '/tweet/:id' do |id|
   @tweet = Tweet.find(id)
   @tweet.destroy
   redirect '/tweets'
