@@ -14,6 +14,12 @@ put '/user/:id' do |id|
   redirect "/user/#{current_user.id}"
 end
 
+get '/user/:id/follows' do |id|
+end
+
+get '/user/:id/followers' do |id|
+end
+
 post '/user/:id/follow' do |id|
   Following.create(from_user_id: "#{current_user.id}", to_user_id: id)
 end

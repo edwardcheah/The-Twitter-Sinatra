@@ -1,4 +1,8 @@
 Username: <%= @user.user_name %><br>
+<!-- follow button -->
+<form action='/user/<%= @user.id %>/follow' method='POST'>
+  <input type='submit' value='follow'>
+</form><br>
 <% if @user.id == current_user.id %>
   Pic URL (external image):
   <form action='/user/<%= @user.id %>' method='POST'>
@@ -23,6 +27,8 @@ Username: <%= @user.user_name %><br>
   City: <%= @user.city %><br>
 <% end %>
 Member since: <%= date_created(@user) %><br>
+<a href='/user/<%= @user.id %>/follows'>Follows: <%= @user.follows.count %></a><br>
+<a href='/user/<%= @user.id %>/followers'>Followers: <%= @user.followees.count %></a><br>
 Profile Picture (enter URL to edit): <input type='text'></input><br>
 Tweet Count: <%= @user.tweets.count %><br>
 

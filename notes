@@ -47,7 +47,8 @@ home page has mini profile next to feed
   homepage tweet ajax call updates mini profile stats too [bug]
 
 users can follow each other
-  must follow from that user's page, ajax updates their stats
+  must follow from that user's page,
+  ajax call update stats
 
 users can like tweets
   ajax updates a tweets likes
