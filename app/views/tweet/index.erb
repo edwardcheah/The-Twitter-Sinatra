@@ -1,25 +1,7 @@
-<div id='wrapper'>
-    <!-- Profile -->
-    <div id="sidebar-wrapper">
-        <!-- mini profile and stats -->
-    </div>
-
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- tweet form -->
-                <%= erb :'/tweet/_tweet_form' %>
-                <div class="col-lg-12">
-                    <ul id='tweet-list'>
-                        <% @tweets.each do |tweet| %>
-                            <li id='single-tweet'>
-                            <%= erb :'tweet/single', locals: {tweet: tweet} %>
-                            </li>
-                        <% end %>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-</div>
+<ul id='tweet-list'>
+    <% @tweets.each do |tweet| %>
+        <li id='single-tweet'>
+        <%= erb :'tweet/single', locals: {tweet: tweet} %>
+        </li>
+    <% end %>
+</ul>
