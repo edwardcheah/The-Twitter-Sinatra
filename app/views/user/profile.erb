@@ -2,6 +2,8 @@ Username: <%= @user.user_name %><br>
 Profile Picture (enter URL to edit): <input type='text'></input><br>
 Tweet Count: <%= @user.tweets.count %><br>
 
-<% @user.tweets.each do |tweet| %>
-  <%= erb :'tweet/single', locals: {tweet: tweet} %>
-<% end %>
+<ul id='tweet-list'>
+  <% @user.tweets.each do |tweet| %>
+    <%= erb :'tweet/single', locals: {tweet: tweet} %>
+  <% end %>
+</ul>

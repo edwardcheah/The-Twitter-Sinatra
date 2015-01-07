@@ -44,3 +44,8 @@ users can follow each other
   must follow from that user's page, ajax updates their stats
 users can like tweets
   ajax updates a tweets likes
+
+bugs/issues
+- user seeds aren't working
+- username uniqueness
+- format times on ajax response
