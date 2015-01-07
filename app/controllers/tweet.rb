@@ -28,7 +28,8 @@ post '/tweet/:id/like' do |id|
   end
 
   if request.xhr?
-    {tweet: @tweet, like: like, like_count: @tweet.likes.count }.to_json
+    erb :'tweet/single', locals: {tweet: @tweet}, layout: false
+    # {tweet: @tweet, like: like, like_count: @tweet.likes.count }.to_json
   else
     redirect '/tweets'
   end
