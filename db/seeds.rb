@@ -4,5 +4,6 @@ User.all.each do |user|
   user.tweets << Tweet.create(content: "a tweet by #{user.user_name}")
   user.blurb = "this is a default blurb"
   user.city = "New York"
+  user.pic_url = "http://lakelandtn.gov/images/pages/N147/tree.png"
   user.save
 end

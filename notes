@@ -34,11 +34,11 @@ user profile shows a users tweets and stats
   user can delete own tweets [done]
   all tweets by that user [done]
   all user names link to their profile page [done]
-user can edit own page (ajax)
+user can edit own page
   profile picture (link to external image)
   blurb [done]
-  city
-  join date
+  city [done]
+  join date [done]
 home page has mini profile next to feed
   homepage tweet ajax call updates mini profile stats too
 users can follow each other
@@ -47,6 +47,7 @@ users can like tweets
   ajax updates a tweets likes
 
 bugs/issues
+- take error messages out of nav
 - username uniqueness
 - format times on ajax response
 

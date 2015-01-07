@@ -27,3 +27,8 @@ body {
   border: 1px dotted black;
   background-color: #a5adb0;
 }
+
+.profile-pic {
+  height: 5em;
+  width: 5em;
+}
