@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :tweets, foreign_key: :author_id
+  has_many :likes
 
   # a user has many follows (follows many other users)
   has_many :followings, foreign_key: :from_user_id, class_name: "Following", table_name: "followings"

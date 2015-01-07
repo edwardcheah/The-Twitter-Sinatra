@@ -1,7 +1,9 @@
 class Tweet < ActiveRecord::Base
-  belongs_to :author, class_name: "User"
   validates :content, presence: true
   validates :content, length: { maximum: 140 }
+
+  belongs_to :author, class_name: "User"
+  has_many :likes
 
   def elapsed_time
     seconds = (Time.now - self.created_at).round(0)

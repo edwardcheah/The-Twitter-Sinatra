@@ -14,7 +14,7 @@ A user has many tweets
 A tweet belongs to a user
 A user can like many tweets
 A tweet can be liked by many users
-(A tweet belongs to a user and a tweet)
+(A like belongs to a user and a tweet)
 
 ROADMAP
 user can create tweets [DONE]
@@ -52,8 +52,8 @@ users can follow each other
   toggle follow/unfollow button [done]
 
 users can like tweets
-  format tweets better
-  put likes in the db
+  format tweets better [ok]
+  put likes in the db [done]
   add a like button
   ajax updates a tweet's like count
 
