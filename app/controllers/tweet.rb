@@ -4,7 +4,6 @@ get '/tweets' do
 end
 
 get '/tweets/new' do
-  # return an HTML form for creating a new tweet
   # erb :'tweets/new'
 end
 
