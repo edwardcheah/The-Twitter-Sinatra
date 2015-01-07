@@ -30,7 +30,7 @@
   <div id='wrapper'>
     <!-- Profile -->
     <div id="sidebar-wrapper">
-        <%= erb :'user/mini_profile' %>
+        <%= erb :'user/mini_profile', locals: {user: current_user} %>
     </div>
 
     <div id="page-content-wrapper">

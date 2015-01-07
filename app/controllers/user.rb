@@ -15,9 +15,17 @@ put '/user/:id' do |id|
 end
 
 get '/user/:id/follows' do |id|
+  @user = User.find(id)
+  @type = 'follows'
+  @followings = @user.follows
+  erb :'/user/followings'
 end
 
 get '/user/:id/followers' do |id|
+  @user = User.find(id)
+  @type = 'followers'
+  @followings = @user.followees
+  erb :'/user/followings'
 end
 
 post '/user/:id/follow' do |id|

@@ -1,11 +1,11 @@
 <div id='mini-profile-wrapper'>
   <% if logged_in? %>
-      <img class='profile-pic' src='<%= current_user.pic_url %>'>
+      <a href='/user/<%= user.id %>'><img class='profile-pic' src='<%= user.pic_url %>'></a>
       <div id='mini-profile-details'>
-        <a href='/user/<%= current_user.id %>'>@<%= current_user.user_name %></a><br>
-        Tweets: <span id='tweet-count'><%= current_user.tweets.count %></span><br>
-        <a href='/user/<%= current_user.id %>/follows'>Follows: <%= current_user.follows.count %></a><br>
-        <a href='/user/<%= current_user.id %>/followers'>Followers: <%= current_user.followees.count %></a><br>
+        <a href='/user/<%= user.id %>'>@<%= user.user_name %></a><br>
+        Tweets: <span id='tweet-count'><%= user.tweets.count %></span><br>
+        <a href='/user/<%= user.id %>/follows'>Follows: <%= user.follows.count %></a><br>
+        <a href='/user/<%= user.id %>/followers'>Followers: <%= user.followees.count %></a><br>
       </div>
   <% else %>
   <% end %>
