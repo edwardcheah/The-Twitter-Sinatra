@@ -32,3 +32,8 @@ body {
   height: 5em;
   width: 5em;
 }
+
+.profile-pic-thumb {
+  height: 2em;
+  width: 2em;
+}

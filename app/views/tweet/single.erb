@@ -1,4 +1,4 @@
-<a href='/user/<%= tweet.author.id %>'><%= tweet.author.user_name %></a><br>
+<a href='/user/<%= tweet.author.id %>'><img class='profile-pic-thumb' src='<%= tweet.author.pic_url %>'><%= tweet.author.user_name %></a><br>
 <%= tweet.elapsed_time %><br>
 <%= tweet.content %><br>
 <% if logged_in? && tweet.author.id == current_user.id %>
