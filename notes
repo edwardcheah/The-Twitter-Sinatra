@@ -54,8 +54,8 @@ users can follow each other
 users can like tweets
   format tweets better [ok]
   put likes in the db [done]
-  add a like button
-  show like count on tweets
+  add a like button [done]
+  show like count on tweets [done]
   ajax updates a tweet's like count
 
 protect routes with :auth as appropriate
