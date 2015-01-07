@@ -19,6 +19,11 @@ delete '/tweet/:id' do |id|
 end
 
 post '/tweet/:id/like' do |id|
-  Like.create(params[:like])
+  existing_like = Like.find_by(params[:like])
+  if existing_like
+    existing_like.destroy
+  else
+    like = Like.create(params[:like])
+  end
   redirect '/tweets'
 end

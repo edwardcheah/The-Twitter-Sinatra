@@ -1,18 +1,22 @@
 <div class='single-tweet'>
   <span class='pic' <a href='/user/<%= tweet.author.id %>'><img class='profile-pic-thumb' src='<%= tweet.author.pic_url %>'><%= tweet.author.user_name %></a></span>
   <span class='elapsed-time'>
-  <% if logged_in? && tweet.author.id == current_user.id %>
-    <form action='/tweet/<%= tweet.id %>' method='POST'>
-      <input type='hidden' name='_method' value='DELETE'>
-      <button class='delete-button' type='submit'>x</button>
+  <% if logged_in? %>
+  <!-- delete button -->
+    <% if tweet.author.id == current_user.id %>
+      <form action='/tweet/<%= tweet.id %>' method='POST'>
+        <input type='hidden' name='_method' value='DELETE'>
+        <button class='delete-button' type='submit'>x</button>
+      </form>
+    <% end %>
+    <!-- like button -->
+    <form class='like-form' action='/tweet/<%= tweet.id %>/like' method='POST'>
+      <input type='hidden' name='like[user_id]' value='<%= current_user.id %>'>
+      <input type='hidden' name='like[tweet_id]' value='<%= tweet.id %>'>
+      <button class='like-button' type='submit'></button>
     </form>
   <% end %>
   <%= tweet.elapsed_time %></span><br>
-  <form class='like-form' action='/tweet/<%= tweet.id %>/like' method='POST'>
-    <input type='hidden' name='like[user_id]' value='<%= current_user.id %>'>
-    <input type='hidden' name='like[tweet_id]' value='<%= tweet.id %>'>
-    <button class='like-button' type='submit'></button>
-  </form>
   <%= tweet.content %><br>
   <%= tweet.likes.count %> Likes
 </div>

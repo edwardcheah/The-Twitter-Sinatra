@@ -57,6 +57,7 @@ users can like tweets
   add a like button [done]
   show like count on tweets [done]
   ajax updates a tweet's like count
+  limit a user's likes to one
 
 protect routes with :auth as appropriate
 
