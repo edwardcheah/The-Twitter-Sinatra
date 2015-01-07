@@ -1,4 +1,4 @@
-<%= tweet.author.user_name %><br>
+<a href='/user/<%= tweet.author.id %>'><%= tweet.author.user_name %></a><br>
 <%= tweet.elapsed_time %><br>
 <%= tweet.content %><br>
 <% if tweet.author.id == current_user.id %>

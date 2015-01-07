@@ -30,9 +30,10 @@ user profile shows a users tweets and stats
   user name [done]
   profile picture
   tweet count [done]
-  follows, followers
-  user can delete own tweets
-  all tweets by that user
+  follows, followers lists
+  user can delete own tweets [done]
+  all tweets by that user [done]
+  all user names link to their profile page [done]
 user can edit own page (ajax)
   profile picture (link to external image)
   blurb

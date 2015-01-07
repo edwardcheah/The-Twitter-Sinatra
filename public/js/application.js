@@ -11,7 +11,7 @@ $(document).ready(function() {
       $response = JSON.parse(response)
       console.log($response)
       if ($response.tweet.id)
-        $('#tweet-list').append('<li id=\'single-tweet\'>'+$response.author+'<br>'+$response.tweet.created_at+'<br>'+$response.tweet.content+'<br></li>')
+        $('#tweet-list').append('<li id=\'single-tweet\'><a href=\'/user/' + $response.tweet.author_id + '\'>' + $response.author + '</a><br>' + $response.tweet.created_at + '<br>' + $response.tweet.content+'<br></li>')
     })
   })
 });
