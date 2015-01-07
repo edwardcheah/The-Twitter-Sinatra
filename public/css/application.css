@@ -29,8 +29,11 @@ body {
 }
 
 .profile-pic {
-  height: 5em;
-  width: 5em;
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+  height: 10em;
+  width: 10em;
 }
 
 .profile-pic-thumb {

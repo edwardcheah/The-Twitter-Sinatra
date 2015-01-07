@@ -1,7 +1,4 @@
 Username: <%= @user.user_name %><br>
-<div id='profile-pic-wrapper'>
-  <img class='profile-pic' src='<%= @user.pic_url %>'>
-</div>
 <% if @user.id == current_user.id %>
   Pic URL (external image):
   <form action='/user/<%= @user.id %>' method='POST'>
