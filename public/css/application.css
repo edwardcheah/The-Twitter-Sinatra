@@ -1,0 +1,10 @@
+/*body {font-family: Josefin Slab }*/
+
+.container {
+  /*background: url("../img/gray_sand.png");*/
+  margin: 20px auto;
+  width: 60%;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+  background-color: #a5adb0;
+}
