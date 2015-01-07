@@ -17,15 +17,17 @@ A tweet can be liked by many users
 (A tweet belongs to a user and a tweet)
 
 ROADMAP
-user can create tweets [done]
+user can create tweets [DONE]
   form on top of feed [done]
   ajax shows tweet on top of feed [done]
+
 feed (home page) shows all tweets by default
   time elapsed in minutes [done]
   content limited to 140 chars [done]
   author user_name [done]
   author profile picture [done]
   likes
+
 user profile shows a users tweets and stats
   user name [done]
   profile picture [done]
@@ -34,15 +36,19 @@ user profile shows a users tweets and stats
   user can delete own tweets [done]
   all tweets by that user [done]
   all user names link to their profile page [done]
-user can edit own page
+
+user can edit own page [DONE]
   profile picture (link to external image) [done]
   blurb [done]
   city [done]
   join date [done]
+
 home page has mini profile next to feed
   homepage tweet ajax call updates mini profile stats too
+
 users can follow each other
   must follow from that user's page, ajax updates their stats
+
 users can like tweets
   ajax updates a tweets likes
 
