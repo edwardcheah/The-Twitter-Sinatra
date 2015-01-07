@@ -6,3 +6,13 @@ I can edit my profile
 I can see who I follow and who follows me
 I can see tweet stats on my profile
 I can like other people's tweets
+
+DB
+A user has many followers
+A user has many follows (a user follows many other users)
+A user has many tweets
+A tweet belongs to a user
+A user can like many tweets
+A tweet can be liked by many users
+(A tweet belongs to a user and a tweet)
+
