@@ -17,3 +17,8 @@ delete '/tweet/:id' do |id|
   @tweet.destroy
   redirect '/tweets'
 end
+
+post '/tweet/:id/like' do |id|
+  Like.create(params[:like])
+  redirect '/tweets'
+end

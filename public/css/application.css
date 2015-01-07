@@ -78,3 +78,17 @@ ul {
   width: 1.3em;
   height: 1.3em;
 }
+
+.like-form {
+  display: inline-block;
+  /*float: left;*/
+}
+.like-button {
+  background: url("../img/like-button.jpg");
+  background-size: 100%;
+  border: none;
+  background-repeat: no-repeat;
+  width: 1.3em;
+  height: 1.3em;
+
+}
