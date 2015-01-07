@@ -1,8 +1,7 @@
 <a href='/user/<%= tweet.author.id %>'><%= tweet.author.user_name %></a><br>
 <%= tweet.elapsed_time %><br>
 <%= tweet.content %><br>
-<% if tweet.author.id == current_user.id %>
-<!-- show delete buttons -->
+<% if logged_in? && tweet.author.id == current_user.id %>
 <form action='/tweets/<%= tweet.id %>' method='POST'>
   <input type='hidden' name='_method' value='DELETE'>
   <input type='submit' value='delete'>

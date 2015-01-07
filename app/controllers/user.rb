@@ -4,6 +4,7 @@ get '/user/:id' do |id|
     redirect '/login'
   end
   @user = User.find(id)
+  @three = User.find(3)
   erb :'user/profile'
 end
 
