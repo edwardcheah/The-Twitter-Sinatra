@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#tweet-form').on('submit', function(event) {
+  $(document).on('submit', '#tweet-form', function(event) {
     event.preventDefault()
     $target = $(event.target)
     $.ajax({
@@ -9,9 +9,11 @@ $(document).ready(function() {
     }).done(function(response) {
       console.log(response)
       $response = JSON.parse(response)
-      console.log($response)
-      if ($response.tweet.id)
-        $('#tweet-list').prepend('<li id=\'single-tweet\'><a href=\'/user/' + $response.tweet.author_id + '\'>' + $response.author + '</a><br>' + $response.tweet.created_at + '<br>' + $response.tweet.content+'<br></li>')
+      console.log($response.tweet.content)
+      if ($response.tweet.id) {
+        $('#tweet-list').prepend('<li id=\'single-tweet\'><a href=\'/user/' + $response.author.id + '\'><img class=\'profile-pic-thumb\' src=' + $response.author.pic_url + '>' + $response.author.user_name + '</a><br>' + $response.tweet.elapsed_time + '<br>' + $response.tweet.content+'<br></li>');
+        $('#tweet-count').replaceWith($response.tweet_count)
+      }
     })
   })
 });

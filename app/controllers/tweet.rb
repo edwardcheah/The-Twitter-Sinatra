@@ -10,7 +10,7 @@ end
 post '/tweets' do
   @tweet = Tweet.create(params[:tweet])
   if request.xhr?
-    {author: @tweet.author.user_name, tweet: @tweet}.to_json
+    {author: @tweet.author, tweet: {id: @tweet.id, elapsed_time: @tweet.elapsed_time, content: @tweet.content}, tweet_count: @tweet.author.tweets.count}.to_json
   else
     redirect '/tweets'
   end

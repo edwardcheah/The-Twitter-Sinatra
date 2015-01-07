@@ -44,7 +44,7 @@ user can edit own page [DONE]
   join date [done]
 
 home page has mini profile next to feed
-  homepage tweet ajax call updates mini profile stats too
+  homepage tweet ajax call updates mini profile stats too [bug]
 
 users can follow each other
   must follow from that user's page, ajax updates their stats
@@ -56,6 +56,8 @@ bugs/issues
 - take error messages out of nav
 - username uniqueness
 - format times on ajax response
+- tweet ajax updates mini profile tweet count only once
+- tweet index ordering is jacked up
 
 text dump
 be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed
