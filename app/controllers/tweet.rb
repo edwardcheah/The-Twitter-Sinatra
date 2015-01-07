@@ -23,8 +23,7 @@ get '/tweets/:id' do |id|
 end
 
 delete '/tweets/:id' do |id|
-  # delete a specific tweet
-  # @tweet = Tweet.find id
-  # @tweet.destroy
-  # redirect '/tweets'
+  @tweet = Tweet.find(id)
+  @tweet.destroy
+  redirect '/tweets'
 end
