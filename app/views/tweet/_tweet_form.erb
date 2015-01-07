@@ -1,4 +1,14 @@
-<form action='/tweets' method='POST'>
-  <textarea rows='3' cols='50' name='tweet[content]'></textarea>
-  <input type='submit' value='The Tweet'>
-</form>
+<% if logged_in? %>
+  <form id='tweet-form' action='/tweets' method='POST'>
+    <textarea rows='3' cols='50' name='tweet[content]'></textarea>
+    <input type='hidden' name='tweet[author_id]' value='<%= current_user.id %>'>
+    <input type='submit' value='The Tweet'>
+  </form>
+<% else %>
+<!-- TODO: Implement session to store tweet if attempt while not logged in -->
+  <!-- <form action='/login' method='GET'>
+    <textarea rows='3' cols='50' name='tweet[content]'></textarea>
+    <input type='submit' value='The Tweet'>
+  </form> -->
+  <h2><a href='/login'>Login to tweet</a></h2>
+<% end %>

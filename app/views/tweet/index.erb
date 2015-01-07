@@ -10,7 +10,7 @@
                 <!-- tweet form -->
                 <%= erb :'/tweet/_tweet_form' %>
                 <div class="col-lg-12">
-                    <ul>
+                    <ul id='tweet-list'>
                         <% @tweets.each do |tweet| %>
                             <li id='single-tweet'>
                             <%= erb :'tweet/single', locals: {tweet: tweet} %>

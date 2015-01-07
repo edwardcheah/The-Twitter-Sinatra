@@ -8,14 +8,12 @@ get '/tweets/new' do
 end
 
 post '/tweets' do
-  if logged_in?
-    params[:tweet][:author_id] = current_user.id
-  else
-    set_error('Login to tweet.')
-    redirect '/login'
-  end
   @tweet = Tweet.create(params[:tweet])
-  redirect '/tweets'
+  if request.xhr?
+    {author: @tweet.author.user_name, tweet: @tweet}.to_json
+  else
+    redirect '/tweets'
+  end
 end
 
 get '/tweets/:id' do |id|

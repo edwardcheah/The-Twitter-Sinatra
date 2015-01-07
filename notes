@@ -17,9 +17,9 @@ A tweet can be liked by many users
 (A tweet belongs to a user and a tweet)
 
 ROADMAP
-user can create tweets
-  form on top of feed
-  ajax shows tweet on top of feed
+user can create tweets [done]
+  form on top of feed [done]
+  ajax shows tweet on top of feed [done]
 feed (home page) shows all tweets by default
   time elapsed in minutes
   content limited to 140 chars
