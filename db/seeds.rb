@@ -3,5 +3,6 @@ require 'faker'
 User.all.each do |user|
   user.tweets << Tweet.create(content: "a tweet by #{user.user_name}")
   user.blurb = "this is a default blurb"
+  user.city = "New York"
   user.save
 end
