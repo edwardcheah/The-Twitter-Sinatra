@@ -3,7 +3,7 @@ get '/tweets' do
   erb :'tweet/index'
 end
 
-post '/tweets' do
+post '/tweets', auth: :user do
   @tweet = Tweet.create(params[:tweet])
   if request.xhr?
     erb :'tweet/single', locals: {tweet: @tweet}, layout: false
@@ -12,13 +12,13 @@ post '/tweets' do
   end
 end
 
-delete '/tweet/:id' do |id|
+delete '/tweet/:id', auth: :user do |id|
   @tweet = Tweet.find(id)
   @tweet.destroy
   redirect '/tweets'
 end
 
-post '/tweet/:id/like' do |id|
+post '/tweet/:id/like', auth: :user do |id|
   existing_like = Like.find_by(params[:like])
   @tweet = Tweet.find(id)
   if existing_like

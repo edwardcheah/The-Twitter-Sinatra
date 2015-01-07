@@ -44,6 +44,14 @@ configure do
       end
     end
   end
+
+  register do
+    def auth(type)
+      condition do
+        redirect ('/login') unless send("current_#{type}")
+      end
+    end
+  end
 end
 
 # Set up the controllers and helpers
