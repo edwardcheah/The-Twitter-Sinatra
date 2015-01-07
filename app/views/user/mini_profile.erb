@@ -4,6 +4,7 @@
       <div id='mini-profile-details'>
         <a href='/user/<%= user.id %>'>@<%= user.user_name %></a><br>
         <%= user.blurb %><br><br>
+        <%= user.city %><br>
         Tweets: <span id='tweet-count'><%= user.tweets.count %></span><br>
         <a href='/user/<%= user.id %>/follows'>Follows: <%= user.follows.count %></a><br>
         <a href='/user/<%= user.id %>/followers'>Followers: <%= user.followees.count %></a><br>

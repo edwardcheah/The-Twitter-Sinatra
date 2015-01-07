@@ -32,10 +32,24 @@ $(document).ready(function() {
       type: 'POST',
       data: $target.serialize()
     }).done(function(response) {
-      var response = JSON.parse(response)
-      $target.closest('.col-lg-12').html(response.full)
-      $('#sidebar-wrapper').html(response.mini)
-      console.log(response.error)
+      var parsedResponse = JSON.parse(response)
+      $target.closest('.col-lg-12').html(parsedResponse.full)
+      $('#sidebar-wrapper').html(parsedResponse.mini)
+    })
+  })
+
+  $(document).on('submit', '.edit-user', function(event) {
+    event.preventDefault()
+    var $target = $(event.target)
+    console.log($target)
+    $.ajax({
+      url: $target.attr('action'),
+      type: 'PUT',
+      data: $target.serialize()
+    }).done(function(response) {
+      var parsedResponse = JSON.parse(response)
+      $target.closest('.col-lg-12').html(parsedResponse.full)
+      $('#sidebar-wrapper').html(parsedResponse.mini)
     })
   })
 });

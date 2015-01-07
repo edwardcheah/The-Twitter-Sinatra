@@ -6,8 +6,15 @@ end
 
 put '/user/:id' do |id|
   @user = User.find(id)
+  @follow_action = @user.has_followee(current_user) ? 'Unfollow' : 'Follow'
   @user.update(params[:user])
-  redirect "/user/#{current_user.id}"
+  if request.xhr?
+    full = erb :'user/profile', locals: {user: @user, follow_action: @follow_action}, layout: false
+    mini = erb :'user/mini_profile', locals: {user: @user}, layout: false
+    {full: full, mini: mini}.to_json
+  else
+    redirect "/user/#{current_user.id}"
+  end
 end
 
 get '/user/:id/follows', auth: :user do |id|

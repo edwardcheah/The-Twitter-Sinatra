@@ -1,4 +1,4 @@
-Username: @<%= user.user_name %><br>
+@<%= user.user_name %><br><br>
 <!-- follow button -->
 <% if user.id != current_user.id %>
   <form class='follow-form' action='/user/<%= user.id %>/follow' method='POST'>
@@ -7,22 +7,18 @@ Username: @<%= user.user_name %><br>
 <% end %>
 <% if user.id == current_user.id %>
   Pic URL (external image):
-  <form action='/user/<%= user.id %>' method='POST'>
+  <form class='edit-user' action='/user/<%= user.id %>' method='POST'>
     <input type='hidden' name='_method' value='PUT'>
-    <input type='text' name='user[pic_url]' placeholder='paste external link'>
-    <input type='submit' value='edit pic'>
-  </form><br>
-  Blurb:
-  <form action='/user/<%= user.id %>' method='POST'>
+    <input type='text' name='user[pic_url]' value='<%= user.pic_url %>'>
+    <br>
+    Blurb:<br>
     <input type='hidden' name='_method' value='PUT'>
     <input type='text' name='user[blurb]' value='<%= user.blurb %>'>
-    <input type='submit' value='edit blurb'>
-  </form><br>
-  City:
-  <form action='/user/<%= user.id %>' method='POST'>
+    <br>
+    City:<br>
     <input type='hidden' name='_method' value='PUT'>
-    <input type='text' name='user[city]' value='<%= user.city %>'>
-    <input type='submit' value='edit city'>
+    <input type='text' name='user[city]' value='<%= user.city %>'><br><br>
+    <input type='submit' value='edit profile'>
   </form><br>
 <% else %>
   Blurb: <%= user.blurb %><br>
@@ -31,8 +27,8 @@ Username: @<%= user.user_name %><br>
 Member since: <%= date_created(user) %><br>
 <a href='/user/<%= user.id %>/follows'>Follows: <%= user.follows.count %></a><br>
 <a href='/user/<%= user.id %>/followers'>Followers: <%= user.followees.count %></a><br>
-Profile Picture (enter URL to edit): <input type='text'></input><br>
-Tweet Count: <%= user.tweets.count %><br>
+Tweet Count: <%= user.tweets.count %><br><br>
+Tweets:
 
 <ul id='tweet-list'>
   <% user.tweets.each do |tweet| %>
