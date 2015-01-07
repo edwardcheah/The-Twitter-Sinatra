@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   def has_follower(other_user)
     self.followers.where(id: other_user.id).count > 0
   end
+
+  def likes_this_tweet(tweet)
+    tweet.likes.where(user_id: self.id).count > 0
+  end
 end

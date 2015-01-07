@@ -20,10 +20,16 @@ end
 
 post '/tweet/:id/like' do |id|
   existing_like = Like.find_by(params[:like])
+  @tweet = Tweet.find(id)
   if existing_like
     existing_like.destroy
   else
     like = Like.create(params[:like])
   end
-  redirect '/tweets'
+
+  if request.xhr?
+    {tweet: @tweet, like: like, like_count: @tweet.likes.count }.to_json
+  else
+    redirect '/tweets'
+  end
 end
