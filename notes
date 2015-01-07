@@ -36,7 +36,7 @@ user profile shows a users tweets and stats
   all user names link to their profile page [done]
 user can edit own page (ajax)
   profile picture (link to external image)
-  blurb
+  blurb [done]
   city
   join date
 home page has mini profile next to feed
@@ -47,6 +47,9 @@ users can like tweets
   ajax updates a tweets likes
 
 bugs/issues
-- user seeds aren't working
 - username uniqueness
 - format times on ajax response
+
+text dump
+be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed
+Dr

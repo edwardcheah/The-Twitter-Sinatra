@@ -1,4 +1,14 @@
 Username: <%= @user.user_name %><br>
+Blurb:
+<% if @user.id == current_user.id %>
+  <form action='/user/<%= @user.id %>' method='POST'>
+    <input type='hidden' name='_method' value='PUT'>
+    <input type='text' name='user[blurb]' value='<%= @user.blurb %>'>
+    <input type='submit' value='edit blurb'>
+  </form><br>
+<% else %>
+  <%= @user.blurb %><br>
+<% end %>
 Profile Picture (enter URL to edit): <input type='text'></input><br>
 Tweet Count: <%= @user.tweets.count %><br>
 

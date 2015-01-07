@@ -6,3 +6,9 @@ get '/user/:id' do |id|
   @user = User.find(id)
   erb :'user/profile'
 end
+
+put '/user/:id' do |id|
+  @user = User.find(id)
+  @user.update(params[:user])
+  redirect "/user/#{current_user.id}"
+end
