@@ -4,7 +4,6 @@ get '/user/:id' do |id|
     redirect '/login'
   end
   @user = User.find(id)
-  @three = User.find(3)
   erb :'user/profile'
 end
 
@@ -16,18 +15,19 @@ end
 
 get '/user/:id/follows' do |id|
   @user = User.find(id)
-  @type = 'follows'
+  @follow_type = 'follows'
   @followings = @user.follows
   erb :'/user/followings'
 end
 
 get '/user/:id/followers' do |id|
   @user = User.find(id)
-  @type = 'followers'
+  @follow_type = 'followers'
   @followings = @user.followees
   erb :'/user/followings'
 end
 
 post '/user/:id/follow' do |id|
   Following.create(from_user_id: "#{current_user.id}", to_user_id: id)
+  redirect "/user/#{id}"
 end

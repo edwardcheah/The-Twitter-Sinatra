@@ -1,4 +1,4 @@
-<a href='/user/<%= @user.id %>'>@<%= @user.user_name %></a>'s <%= @type %>:
+<a href='/user/<%= @user.id %>'>@<%= @user.user_name %></a>'s <%= @follow_type %>:
 <% @followings.each do |following| %>
-  <%= erb :'user/mini_profile', locals: {user: following} %>
+  <%= erb :'user/mini_profile', locals: {user: following} %>`
 <% end %>
