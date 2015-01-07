@@ -9,7 +9,9 @@ $(document).ready(function() {
     }).done(function(response) {
       console.log(response)
       $response = JSON.parse(response)
-      $('#tweet-list').append('<li id=\'single-tweet\'>'+$response.author+'<br>'+$response.tweet.created_at+'<br>'+$response.tweet.content+'<br></li>')
+      console.log(response)
+      if ($response.tweet.id)
+        $('#tweet-list').append('<li id=\'single-tweet\'>'+$response.author+'<br>'+$response.tweet.created_at+'<br>'+$response.tweet.content+'<br></li>')
     })
   })
 });
