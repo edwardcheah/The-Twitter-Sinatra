@@ -65,7 +65,8 @@ bugs/issues
 - ajax new tweet formatting (do last, it keeps changing) [done]
 - can't follow somebody more than once [done]
 - handle error: bad tweet
-- username uniqueness
+- username uniqueness [done]
+- format times in general
 - format times on ajax response
 - tweet ajax updates mini profile tweet count only once
 - tweet index ordering is jacked up

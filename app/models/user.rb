@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
+  validates_uniqueness_of :user_name
+
   has_many :tweets, foreign_key: :author_id
   has_many :likes
 

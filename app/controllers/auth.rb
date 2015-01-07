@@ -9,7 +9,7 @@ post '/login' do
     session[:user_id] = user.id
     redirect '/'
   else
-    set_error('Login Failed.')
+    set_error('Invalid login.')
     redirect '/login'
   end
 end
@@ -25,7 +25,7 @@ post '/signup' do
     session[:user_id] = new_user.id
     redirect '/'
   else
-    set_error('Signup failed.')
+    get_ar_errors(new_user)
     redirect '/signup'
   end
 end
