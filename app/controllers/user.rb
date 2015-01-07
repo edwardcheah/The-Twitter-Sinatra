@@ -40,7 +40,9 @@ post '/user/:id/follow' do |id|
   @follow_action = @user.has_followee(current_user) ? 'Unfollow' : 'Follow'
 
   if request.xhr?
-    erb :'user/profile', locals: {user: @user, follow_action: @follow_action}, layout: false
+    full = erb :'user/profile', locals: {user: @user, follow_action: @follow_action}, layout: false
+    mini = erb :'user/mini_profile', locals: {user: current_user}, layout: false
+    {full: full, mini: mini}.to_json
   else
     redirect "/user/#{id}"
   end

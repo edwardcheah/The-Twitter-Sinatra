@@ -32,8 +32,9 @@ $(document).ready(function() {
       type: 'POST',
       data: $target.serialize()
     }).done(function(response) {
-      console.log(response)
-      $target.closest('.col-lg-12').html(response)
+      var response = JSON.parse(response)
+      $target.closest('.col-lg-12').html(response.full)
+      $('#sidebar-wrapper').html(response.mini)
     })
   })
 });
