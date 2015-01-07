@@ -49,10 +49,13 @@ home page has mini profile next to feed
 users can follow each other
   must follow from that user's page [done]
   ajax call update stats
-  toggle follow/unfollow button
+  toggle follow/unfollow button [done]
 
 users can like tweets
-  ajax updates a tweets likes
+  format tweets better
+  put likes in the db
+  add a like button
+  ajax updates a tweet's like count
 
 protect routes with :auth as appropriate
 
