@@ -8,9 +8,14 @@ get '/tweets/new' do
 end
 
 post '/tweets' do
-  # create a new tweet
-  # @tweet = Tweet.create(params[:tweet])
-  # redirect '/tweets'
+  if logged_in?
+    params[:tweet][:author_id] = current_user.id
+  else
+    set_error('Login to tweet.')
+    redirect '/login'
+  end
+  @tweet = Tweet.create(params[:tweet])
+  redirect '/tweets'
 end
 
 get '/tweets/:id' do |id|
