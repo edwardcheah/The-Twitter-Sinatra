@@ -49,3 +49,32 @@ body {
 #mini-profile-wrapper {
   max-width: 8em;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.single-tweet {
+  background-color: black;
+  border: 1px solid #a5adb0;
+  border-radius: .5em;
+  margin-top: 2em;
+  max-width: 80%;
+  padding: 1em;
+}
+
+.elapsed-time {
+  display: inline-block;
+  float: right;
+}
+.pic {
+  display: inline-block;
+}
+
+.delete-button {
+  float: right;
+  display: inline-block;
+  padding: 0;
+  width: 1.3em;
+  height: 1.3em;
+}

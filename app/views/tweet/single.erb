@@ -1,9 +1,12 @@
-<a href='/user/<%= tweet.author.id %>'><img class='profile-pic-thumb' src='<%= tweet.author.pic_url %>'><%= tweet.author.user_name %></a><br>
-<%= tweet.elapsed_time %><br>
-<%= tweet.content %><br>
-<% if logged_in? && tweet.author.id == current_user.id %>
-<form action='/tweets/<%= tweet.id %>' method='POST'>
-  <input type='hidden' name='_method' value='DELETE'>
-  <input type='submit' value='delete'>
-</form>
-<% end %>
+<div class='single-tweet'>
+  <span class='pic' <a href='/user/<%= tweet.author.id %>'><img class='profile-pic-thumb' src='<%= tweet.author.pic_url %>'><%= tweet.author.user_name %></a></span>
+  <span class='elapsed-time'>
+  <% if logged_in? && tweet.author.id == current_user.id %>
+  <form action='/tweets/<%= tweet.id %>' method='POST'>
+    <input type='hidden' name='_method' value='DELETE'>
+    <button class='delete-button' type='submit'>x</button>
+  </form>
+  <% end %>
+  <%= tweet.elapsed_time %></span><br>
+  <%= tweet.content %><br>
+</div>

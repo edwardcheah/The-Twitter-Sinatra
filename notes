@@ -66,6 +66,8 @@ bugs/issues
 - format times on ajax response
 - tweet ajax updates mini profile tweet count only once
 - tweet index ordering is jacked up
+- handle tweet too long handle
+- ajax tweet feed formatting (do last, it keeps changing)
 
 text dump
 be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed
