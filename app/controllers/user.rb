@@ -5,7 +5,7 @@ get '/user/:id' do |id|
   end
   @user = User.find(id)
   @follow_action = @user.has_followee(current_user) ? 'Unfollow' : 'Follow'
-  erb :'user/profile'
+  erb :'user/profile', locals: {user: @user, follow_action: @follow_action}
 end
 
 put '/user/:id' do |id|
@@ -29,15 +29,19 @@ get '/user/:id/followers' do |id|
 end
 
 post '/user/:id/follow' do |id|
-  params[:follow] = {
-    from_user_id: "#{current_user.id}",
-    to_user_id: id
-  }
-  existing_follow = Following.find_by(params[:follow])
-  if existing_follow
-    existing_follow.destroy
+  @user = User.find(id)
+  existing_follow = Following.where(from_user_id: "#{current_user.id}", to_user_id: id)
+  if existing_follow.count > 0
+    existing_follow.first.destroy
   else
-    Following.create(params[:follow])
+    Following.create(from_user_id: "#{current_user.id}", to_user_id: id)
   end
-  redirect "/user/#{id}"
+
+  @follow_action = @user.has_followee(current_user) ? 'Unfollow' : 'Follow'
+
+  if request.xhr?
+    erb :'user/profile', locals: {user: @user, follow_action: @follow_action}, layout: false
+  else
+    redirect "/user/#{id}"
+  end
 end

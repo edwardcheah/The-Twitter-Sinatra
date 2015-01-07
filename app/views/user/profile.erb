@@ -1,41 +1,41 @@
-Username: @<%= @user.user_name %><br>
+Username: @<%= user.user_name %><br>
 <!-- follow button -->
-<% if @user.id != current_user.id %>
-  <form action='/user/<%= @user.id %>/follow' method='POST'>
-    <input type='submit' value='<%= @follow_action %>'>
+<% if user.id != current_user.id %>
+  <form class='follow-form' action='/user/<%= user.id %>/follow' method='POST'>
+    <input type='submit' value='<%= follow_action %>'>
   </form><br>
 <% end %>
-<% if @user.id == current_user.id %>
+<% if user.id == current_user.id %>
   Pic URL (external image):
-  <form action='/user/<%= @user.id %>' method='POST'>
+  <form action='/user/<%= user.id %>' method='POST'>
     <input type='hidden' name='_method' value='PUT'>
     <input type='text' name='user[pic_url]' placeholder='paste external link'>
     <input type='submit' value='edit pic'>
   </form><br>
   Blurb:
-  <form action='/user/<%= @user.id %>' method='POST'>
+  <form action='/user/<%= user.id %>' method='POST'>
     <input type='hidden' name='_method' value='PUT'>
-    <input type='text' name='user[blurb]' value='<%= @user.blurb %>'>
+    <input type='text' name='user[blurb]' value='<%= user.blurb %>'>
     <input type='submit' value='edit blurb'>
   </form><br>
   City:
-  <form action='/user/<%= @user.id %>' method='POST'>
+  <form action='/user/<%= user.id %>' method='POST'>
     <input type='hidden' name='_method' value='PUT'>
-    <input type='text' name='user[city]' value='<%= @user.city %>'>
+    <input type='text' name='user[city]' value='<%= user.city %>'>
     <input type='submit' value='edit city'>
   </form><br>
 <% else %>
-  Blurb: <%= @user.blurb %><br>
-  City: <%= @user.city %><br>
+  Blurb: <%= user.blurb %><br>
+  City: <%= user.city %><br>
 <% end %>
-Member since: <%= date_created(@user) %><br>
-<a href='/user/<%= @user.id %>/follows'>Follows: <%= @user.follows.count %></a><br>
-<a href='/user/<%= @user.id %>/followers'>Followers: <%= @user.followees.count %></a><br>
+Member since: <%= date_created(user) %><br>
+<a href='/user/<%= user.id %>/follows'>Follows: <%= user.follows.count %></a><br>
+<a href='/user/<%= user.id %>/followers'>Followers: <%= user.followees.count %></a><br>
 Profile Picture (enter URL to edit): <input type='text'></input><br>
-Tweet Count: <%= @user.tweets.count %><br>
+Tweet Count: <%= user.tweets.count %><br>
 
 <ul id='tweet-list'>
-  <% @user.tweets.each do |tweet| %>
+  <% user.tweets.each do |tweet| %>
     <%= erb :'tweet/single', locals: {tweet: tweet} %>
   <% end %>
 </ul>

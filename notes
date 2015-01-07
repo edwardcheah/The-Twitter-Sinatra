@@ -57,7 +57,7 @@ users can like tweets
   add a like button [done]
   show like count on tweets [done]
   ajax updates a tweet's like count [done, finally]
-  limit a user's likes to one
+  limit a user's likes to one [done]
 
 protect routes with :auth as appropriate
 
@@ -71,6 +71,7 @@ bugs/issues
 - tweet index ordering is jacked up
 - handle tweet too long handle
 - ajax tweet deletion
+- clear form upon submission
 
 text dump
 be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed

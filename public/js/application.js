@@ -24,4 +24,16 @@ $(document).ready(function() {
     })
   })
 
+  $(document).on('submit', '.follow-form', function(event) {
+    event.preventDefault()
+    var $target = $(event.target)
+    $.ajax({
+      url: $target.attr('action'),
+      type: 'POST',
+      data: $target.serialize()
+    }).done(function(response) {
+      console.log(response)
+      $target.closest('.col-lg-12').html(response)
+    })
+  })
 });
