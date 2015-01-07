@@ -12,6 +12,7 @@ $(document).ready(function() {
       $('#tweet-list').prepend(parsedResponse.view)
       $('#sidebar-wrapper').html(parsedResponse.mini)
     })
+    $('#tweet-form')[0].reset()
   })
 
   $(document).on('submit', '.delete-button', function(event) {

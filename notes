@@ -69,7 +69,7 @@ bugs/issues
 - tweet ajax updates mini profile tweet count only once [fixed]
 - tweet index ordering is jacked up [fixed]
 - ajax tweet deletion [done]
-- clear form upon submission
+- clear form upon submission [done]
 
 text dump
 be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed
