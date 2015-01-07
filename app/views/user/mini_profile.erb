@@ -3,6 +3,10 @@
       <img class='profile-pic' src='<%= current_user.pic_url %>'>
       <div id='mini-profile-details'>
         <a href='/user/<%= current_user.id %>'>@<%= current_user.user_name %></a><br>
+        <!-- follow button -->
+        <form action='/user/<%= current_user.id %>/follow' method='POST'>
+          <input type='submit' value='follow'>
+        </form>
         Tweets: <span id='tweet-count'><%= current_user.tweets.count %></span><br>
         Follows:<br>
         Followers:<br>

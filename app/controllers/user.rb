@@ -13,3 +13,7 @@ put '/user/:id' do |id|
   @user.update(params[:user])
   redirect "/user/#{current_user.id}"
 end
+
+post '/user/:id/follow' do |id|
+  Following.create(from_user_id: "#{current_user.id}", to_user_id: id)
+end

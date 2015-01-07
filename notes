@@ -52,6 +52,8 @@ users can follow each other
 users can like tweets
   ajax updates a tweets likes
 
+protect routes with :auth as appropriate
+
 bugs/issues
 - take error messages out of nav
 - username uniqueness
