@@ -21,8 +21,8 @@ user can create tweets [done]
   form on top of feed [done]
   ajax shows tweet on top of feed [done]
 feed (home page) shows all tweets by default
-  time elapsed in minutes
-  content limited to 140 chars
+  time elapsed in minutes [done]
+  content limited to 140 chars [done]
   author user_name
   author profile picture
   likes
