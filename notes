@@ -66,10 +66,8 @@ bugs/issues
 - can't follow somebody more than once [done]
 - handle error: bad tweet
 - username uniqueness [done]
-- format times in general
-- format times on ajax response
-- tweet ajax updates mini profile tweet count only once
-- tweet index ordering is jacked up
+- tweet ajax updates mini profile tweet count only once [fixed]
+- tweet index ordering is jacked up [fixed]
 - handle tweet too long handle
 - ajax tweet deletion
 - clear form upon submission

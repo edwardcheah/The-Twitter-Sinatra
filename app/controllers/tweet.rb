@@ -7,7 +7,9 @@ post '/tweets', auth: :user do
   @tweet = Tweet.create(params[:tweet])
 
   if request.xhr?
-    erb :'tweet/single', locals: {tweet: @tweet, error: @error}, layout: false
+    view = erb :'tweet/single', locals: {tweet: @tweet, error: @error}, layout: false
+    mini = erb :'user/mini_profile', locals: {user: current_user}, layout: false
+    {mini: mini, view: view}.to_json
   else
     redirect '/tweets'
   end

@@ -8,7 +8,9 @@ $(document).ready(function() {
       type: 'POST',
       data: $target.serialize()
     }).done(function(response) {
-      $('#tweet-list').prepend(response)
+      var parsedResponse = JSON.parse(response)
+      $('#tweet-list').prepend(parsedResponse.view)
+      $('#sidebar-wrapper').html(parsedResponse.mini)
     })
   })
 
