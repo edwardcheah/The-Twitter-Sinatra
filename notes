@@ -27,9 +27,9 @@ feed (home page) shows all tweets by default
   author profile picture
   likes
 user profile shows a users tweets and stats
-  user name
+  user name [done]
   profile picture
-  tweet count
+  tweet count [done]
   follows, followers
   user can delete own tweets
   all tweets by that user
